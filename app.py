@@ -42,19 +42,20 @@ def callback():
 # ================= 機器人區塊 Start =================
 @handler.add(MessageEvent, message=TextMessage)  # default
 
-#def gf(query)
-#    gf_company_name = get_company_name(query)
-#    gf_company_summary = get_company_summary(query)
-#    return 
+def gf(query)
+    gf_company_name = get_company_name(query)
+    gf_company_summary = get_company_summary(query)
+    return gf_company_name + gf_company_summary
 
 def handle_text_message(event):                  # default
     msg = event.message.text #message from user
     commandlist = msg.split()
     jobname = commandlist[0]
-    {
-            gf : lambda: result = get_company_name(commandlist[1]) + get_company_summary(commandlist[1]),
-            h : lambda: result = "This is a help."
-            }.get(jobname, lambda: result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！")
+
+    if jobname == 'gf':
+        result = gf(commandlist[1])
+    else:
+        result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！"
 
     # Google Finance 查詢公司名稱簡介
 #    gf_company_name = get_company_name(msg)
