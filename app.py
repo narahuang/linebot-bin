@@ -42,10 +42,10 @@ def callback():
 # ================= 機器人區塊 Start =================
 @handler.add(MessageEvent, message=TextMessage)  # default
 
-def gf(query):
-    gf_company_name = get_company_name(query)
-    gf_company_summary = get_company_summary(query)
-    return gf_company_name + gf_company_summary
+#def gf(query):
+#    gf_company_name = get_company_name(query)
+#    gf_company_summary = get_company_summary(query)
+#    return gf_company_name + gf_company_summary
 
 def handle_text_message(event):                  # default
     msg = event.message.text #message from user
