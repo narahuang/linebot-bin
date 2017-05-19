@@ -51,7 +51,7 @@ def handle_text_message(event):                  # default
     msg = event.message.text #message from user
     commandlist = msg.split()
     jobname = commandlist[0]
-    result = commandlist[0] + commandlist[1]
+    result = commandlist[1]
     #if jobname == 'gf':
     #    result = gf(commandlist[1])
     #else:
