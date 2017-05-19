@@ -51,11 +51,11 @@ def handle_text_message(event):                  # default
     msg = event.message.text #message from user
     commandlist = msg.split()
     jobname = commandlist[0]
-    result = commandlist[1]
-    #if jobname == 'gf':
-    #    result = gf(commandlist[1])
-    #else:
-    #    result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！"
+    result = "This is help"
+    if jobname == 'gf':
+        result = get_company_name(commandlist[1])
+    else:
+        result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！"
 
     # Google Finance 查詢公司名稱簡介
 #    gf_company_name = get_company_name(msg)
