@@ -52,7 +52,8 @@ def handle_text_message(event):                  # default
     commandlist = msg.split()
     jobname = commandlist[0]
     {
-            gf : lambda: result = get_company_name(commandlist[1]) + get_company_summary(commandlist[1])
+            gf : lambda: result = get_company_name(commandlist[1]) + get_company_summary(commandlist[1]),
+            h : lambda: result = "This is a help."
             }.get(jobname, lambda: result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！")
 
     # Google Finance 查詢公司名稱簡介
