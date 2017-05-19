@@ -10,6 +10,7 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
+from gfinance import get_company_name, get_company_summary
 
 app = Flask(__name__)
 
@@ -43,10 +44,16 @@ def callback():
 def handle_text_message(event):                  # default
     msg = event.message.text #message from user
 
+
+    # Google Finance 查詢公司名稱簡介
+    gf_company_name = get_company_name(msg)
+    gf_company_summary = get_company_summary(msg)
+    result = gf_company_name + gf_company_summary
+
     # 針對使用者各種訊息的回覆 Start =========
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=msg))
+        TextSendMessage(text=result))
 
     # 針對使用者各種訊息的回覆 End =========
 
