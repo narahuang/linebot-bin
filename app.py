@@ -11,11 +11,12 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 from gfinance import get_company_name, get_company_summary
+from lineconfig import *
 
 app = Flask(__name__)
 
-handler = WebhookHandler('d0f949b59aab4a74f4b2fb460e3091c0') 
-line_bot_api = LineBotApi('aMcIW96nybaqd7dJDM2Qfihat7kDeBrCa66hWY6dyMVyGJ1T3qyYaRRQ+b5DycEGKOgFQ+lT4F/48fQt06/ls4MPzp8342CSILFZYV1U7GPmtMk07Fo367SYf7r0c7W3wC4qcxW4MDvIK2mLAUcScwdB04t89/1O/w1cDnyilFU=') 
+handler = WebhookHandler(line_channel_secret) 
+line_bot_api = LineBotApi(line_channel_access_token) 
 
 
 @app.route('/')
