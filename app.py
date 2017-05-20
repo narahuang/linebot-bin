@@ -55,7 +55,7 @@ def handle_text_message(event):                  # default
     else:
         result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！"
 
-    result = result + 'TESTQQQ'
+    result = result + os.environ['TESTQQQ']
     # 針對使用者各種訊息的回覆 Start =========
     line_bot_api.reply_message(
         event.reply_token,
