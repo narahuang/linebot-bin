@@ -12,7 +12,7 @@ from linebot.models import (
 )
 from gfinance import get_company_name, get_company_summary
 from lineconfig import *
-
+import os
 app = Flask(__name__)
 
 handler = WebhookHandler(os.environ['LINE_C_S']) 
@@ -64,6 +64,5 @@ def handle_text_message(event):                  # default
 
 # ================= 機器人區塊 End =================
 
-import os
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=os.environ['PORT'])
