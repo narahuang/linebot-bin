@@ -1,0 +1,2 @@
+line_channel_secret = 'd0f949b59aab4a74f4b2fb460e3091c0'
+line_channel_access_token = 'aMcIW96nybaqd7dJDM2Qfihat7kDeBrCa66hWY6dyMVyGJ1T3qyYaRRQ+b5DycEGKOgFQ+lT4F/48fQt06/ls4MPzp8342CSILFZYV1U7GPmtMk07Fo367SYf7r0c7W3wC4qcxW4MDvIK2mLAUcScwdB04t89/1O/w1cDnyilFU='
