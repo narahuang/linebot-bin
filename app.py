@@ -11,7 +11,6 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 from gfinance import get_company_name, get_company_summary
-from lineconfig import *
 import os
 app = Flask(__name__)
 
