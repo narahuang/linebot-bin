@@ -15,8 +15,8 @@ from lineconfig import *
 
 app = Flask(__name__)
 
-handler = WebhookHandler(line_channel_secret) 
-line_bot_api = LineBotApi(line_channel_access_token) 
+handler = WebhookHandler(os.environ['LINE_C_S']) 
+line_bot_api = LineBotApi(os.environ['LINE_C_A_T']) 
 
 
 @app.route('/')
@@ -55,7 +55,6 @@ def handle_text_message(event):                  # default
     else:
         result = "gf 後面接股票代碼可以查詢 Google Finance 上面的公司資料唷！"
 
-    result = result + os.environ['TESTQQQ']
     # 針對使用者各種訊息的回覆 Start =========
     line_bot_api.reply_message(
         event.reply_token,
